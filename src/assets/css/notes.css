@@ -1,0 +1,355 @@
+
+/* Styling Notes box */
+
+.none{
+    color:rgb(255, 251, 245);
+    color: #fda92b;
+}
+
+
+  .notes-header{
+    max-height: 6rem;
+    display: flex;
+    flex-direction: column;   
+    justify-content: space-evenly;
+    padding: 0.7rem 2rem 0.7rem 1rem;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    position: relative;
+    z-index: 1;
+
+}
+
+  /* .notes-header-title{
+    color: var(--black);
+  } */
+
+
+  #notes-screen{
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    /* background-image: url("../background-textures/axiom-pattern.png"); */
+    background-image: url("../background-textures/always-grey.png");
+    position: relative;
+}
+
+ #notes-screen::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  #notes-screen {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  } 
+
+  /* .notes-header p{
+    margin:0.2rem 0 0 0rem;
+    color: var(--black);
+    opacity: 0.9;
+  } */
+
+  .notes-header-bottom{
+    display: flex;
+    align-items: center;
+
+  }
+ 
+  .notes-header-icons{
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+  }
+  .notes-header-icon{
+    cursor: pointer;
+  }
+
+  .notes-header-replay{
+    margin-left: 1rem ;
+  }
+
+
+  .searchbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    align-self: center;
+    transition: 0.3s all;
+    background-color: #333;
+    opacity: 0;
+  }
+    .searchCloseIcon{
+        cursor: pointer;
+        /* position: absolute;
+        right: 3rem ; */
+    }
+
+    .searchbar-mounted{
+        transform: translateY(7rem);
+        opacity: 1;
+    }
+
+  #notes-section{
+    padding: 1.5rem 1.2rem ;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-content: start;
+    transition: all 0.3s;
+    overflow-y: auto;
+  
+}
+
+#notes-section::-webkit-scrollbar-track
+{
+	border: 5px solid transparent;
+	background-color: transparent;
+}
+
+#notes-section::-webkit-scrollbar
+{
+	width: 3px;
+	background-color: rgba(0,0,0,0);
+}
+
+#notes-section::-webkit-scrollbar-thumb
+{
+	background-color: #efc16aaa;
+	border-radius: 10px;
+}
+
+
+.notes-section-translateY{
+    transform: translateY(4.2rem);
+}
+
+
+
+.note{
+    /* width:  260px;
+    height: 350px; */
+    padding: 1.3rem 1.3rem 1rem 1.3rem;
+    margin: 0;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.4s;
+
+    min-width: 150px;
+    min-height: 200px;
+
+    border: 1px solid #ffffff00; 
+
+    background-color: hsla(0, 100%, 100%, 0.07);
+	/* */
+
+}
+
+.notes-loading-box{
+    min-width: 150px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: hsla(0, 100%, 100%, 0.07);
+
+}
+
+
+
+.note-shadow-light{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 20px 0px;
+}
+.note-shadow-light:hover{
+    box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 21px 0px;
+}
+
+.note-shadow-dark{
+    
+	background-color: hsla(0, 100%, 100%, 0.05);
+	box-shadow:
+	/* offset-x | offset-y | blur-radius | spread-radius | color */
+	0px 2px 2px 0px hsla(0,0%,0%,0.14), 
+	0px 3px 1px -2px hsla(0,0%,0%,0.12), 
+	0px 1px 5px 0px hsla(0,0%,0%,0.2);
+}
+.note-shadow-dark:hover{
+    box-shadow:
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    0px 24px 38px 3px hsla(0,0%,0%,0.14), 
+    0px 9px 46px 8px hsla(0,0%,0%,0.12), 
+    0px 11px 15px -7px hsla(0,0%,0%,0.2);
+    
+}
+
+
+.note-selected{
+    transition: all 0.4s;
+
+    border: 1px solid #efc16a77; 
+    /* The above color is var dark green with lesser opacity */
+    /* box-shadow: rgba(100, 100, 111, 0.16) 0px 6px 18px 0px; */
+}
+.note-selected:hover{
+    box-shadow: rgba(100, 100, 111, 0.16) 0px 6px 18px 0px;
+}
+ 
+
+    .note-title{
+        /* color: rgba(10, 10, 10, 0.85); */
+        word-wrap: break-word;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 16rem;
+        font-size: 1.4rem;
+        font-weight: bold;
+        overflow: hidden;
+    }
+
+
+    .note-content{
+        font-size:0.9rem;
+        /* color: rgba(25,25,25,0.6); */
+        text-overflow: ellipsis;
+        word-wrap: break-word;
+        overflow: hidden;
+        max-height: 4.8rem; /* (Number of lines you want visible) * (line-height) */
+        line-height: 1.2rem;
+        text-align:justify;
+        word-wrap: break-word;
+    }
+
+    .note-top{
+        display: flex;
+    }
+        .note-menu{
+            margin-left: auto;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+    .note-bottom{
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .tags-container{
+        display: flex;
+        gap: 0.3rem;
+    }
+    .note-tag{
+        display: inline;
+        color:var(--white);
+        border-radius: 16px;
+        padding: 4px 8px;
+        font-size: 0.75rem;
+    }
+
+    .note-date{
+        font-family: var(--font-2);
+        opacity: 0.6;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+    }
+
+    .note-footer{
+        display: flex;
+        align-items: center;
+    }
+
+        .note-footer-star{
+            margin-left: auto;
+        }
+
+#newNoteDialog{
+    padding:0 0.2rem 0.5rem 0.2rem;
+}
+
+
+.searchbar{
+    width: 30rem;
+}
+
+.notes-loading-container{
+    display: flex;
+    /* background: #fff; */
+   
+}
+.notes-loading-box{
+    /* background-color: #000; */
+   
+   
+}
+
+
+.noNotesText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-bottom: -2rem;
+}
+
+ 
+
+
+@media (max-width:1280px) {
+    #notes-section{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width:400px) {
+
+
+    .note, .notes-loading-box{
+    
+        min-width: 50px;
+        min-height: 200px;
+        max-height: 200px;
+        overflow: hidden;
+    }
+
+    
+
+    .header-add-icon{
+        position: absolute;
+        margin-top: auto;
+        bottom: 7rem;
+        right: 2rem;
+        z-index: 3;
+ 
+    }
+
+    .note-title{
+        font-size: 1.2rem;
+        
+    }
+    .note-content{
+        font-size:0.8rem;
+        /* color: rgba(25,25,25,0.6); */
+        max-height: 3.6rem; /* (Number of lines you want visible) * (line-height) */
+        line-height: 1.2rem;
+    }
+
+    
+    .searchbar{
+        width: 20rem;
+    }
+    
+}
+
+
+
+
+

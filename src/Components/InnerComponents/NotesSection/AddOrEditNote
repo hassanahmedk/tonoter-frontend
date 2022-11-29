@@ -1,0 +1,121 @@
+// import {useState} from 'react';
+
+// import Button from '@mui/material/Button';
+// import TextField from '@mui/material/TextField';
+// import Dialog from '@mui/material/Dialog';
+// import DialogActions from '@mui/material/DialogActions';
+// import DialogContent from '@mui/material/DialogContent';
+// import DialogContentText from '@mui/material/DialogContentText';
+// import DialogTitle from '@mui/material/DialogTitle';
+
+// function NewNote(props) {
+
+//   const [noteData, setNoteData] = useState({title:props.title, content:props.content, tags:props.tag, dateModified:"", user:""});
+
+//   function submitNote () {
+//     let fetchURL = "";
+
+//     if(props.actionText === "Add Note"){
+//       fetchURL = "/notes/0"
+//     } else if(props.actionText === "Edit"){
+//       fetchURL = "/notes/" + props.id  
+//     }
+
+//     const noteDataJSON = {
+//       ...noteData,
+//       dateModified: new Date(),
+//       author: "Hassan"
+//     }    
+      
+//     fetch(fetchURL, {
+//       method: (props.actionText==="Edit" ? "PUT" : "POST"),
+//       headers: {
+//         'Content-type' : "application/json"
+//       },
+//       body: JSON.stringify(noteDataJSON)
+//     })
+//     .then(res => res.json())
+//     .then(data => {
+//       console.log(data);
+//       props.updateNotesAfterEditOrAdd(data, props.id, props.actionText);
+//       props.actionText==="Edit" ? props.onCloseEdit() : props.onCloseAdd() 
+//     })
+//   }
+  
+
+  
+
+//   function handleTextChange(event){
+//     let {name, value} = event.target;
+
+//     setNoteData(function(prevValues){
+//       return {...prevValues, [name]: value};
+//     })
+//   }
+
+//   return (
+
+
+//     <Dialog open={props.actionText==="Edit" ? props.openEdit : props.openAdd }
+
+//             onClose={ ()=>
+//                 {props.actionText==="Edit" ? props.onCloseEdit() : props.onCloseAdd() }
+//             }
+//     >
+
+//         <div id="newNoteDialog">
+        
+//           <DialogTitle>Subscribe</DialogTitle>
+//             <DialogContent>
+//               <DialogContentText>
+//                 To subscribe to this website, please enter your email address here. We
+//                 will send updates occasionally. 
+//               </DialogContentText>
+//               <TextField
+//                 name="title"
+//                 value = {noteData.title}
+//                 onChange = {handleTextChange}
+//                 autoFocus
+//                 margin="dense"
+//                 id="name"
+//                 label="Title"
+//                 fullWidth
+//                 variant="outlined"
+//               />
+//               <TextField
+//                 name="content"
+//                 value = {noteData.content}
+//                 onChange = {handleTextChange}
+//                 autoFocus
+//                 margin="dense"
+//                 id="name"
+//                 label="Content"
+//                 fullWidth
+//                 variant="outlined"
+//                 multiline
+//                 minRows={2}
+//               />
+//               <TextField
+//                 name="tags"
+//                 value = {noteData.tags}
+//                 onChange = {handleTextChange}
+//                 autoFocus
+//                 margin="dense"
+//                 id="name"
+//                 label="Tags (Separated with comma)"
+//                 fullWidth
+//                 variant="outlined"
+//               />
+//             </DialogContent>
+//           <DialogActions>
+//             <Button onClick={()=>{
+//               props.actionText==="Edit" ? props.onCloseEdit() : props.onCloseAdd() }}>
+//               Cancel</Button>
+//             <Button onClick={submitNote} variant="contained">{props.actionText}</Button>
+//           </DialogActions>
+//       </div>
+//     </Dialog>
+//   );
+// }
+
+// export default NewNote;
