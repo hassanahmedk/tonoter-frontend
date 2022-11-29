@@ -109,16 +109,11 @@ function App() {
         />
 
       <div id="landing">
-        
-    
-
         <Header />
         <NotesSection unpopulateDisplaySection={unpopulateDisplaySection} populateDisplaySection = {populateDisplaySection} />
         <Display isPopulated={isPopulated} noteToDisplay={noteToDisplay}/>
-
-        
-
       </div>
+      
       </ThemeProvider>
     
 
@@ -129,7 +124,6 @@ function App() {
 }
 
 export default App;
-
 
 // Done
 /*
