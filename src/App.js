@@ -113,7 +113,7 @@ function App() {
         <NotesSection unpopulateDisplaySection={unpopulateDisplaySection} populateDisplaySection = {populateDisplaySection} />
         <Display isPopulated={isPopulated} noteToDisplay={noteToDisplay}/>
       </div>
-      
+
       </ThemeProvider>
     
 
@@ -140,6 +140,8 @@ click display note, refactor with redux
 
 
 /* DUE  */ 
+// Signup checks 
+// min width of notes screen (for no notes in mobile)
 // Fix Date, date format will be string in db // STILL ISSUE
 // login animation
 // signup pic display

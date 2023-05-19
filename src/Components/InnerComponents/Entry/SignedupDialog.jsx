@@ -7,7 +7,9 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { useSelector, useDispatch } from 'react-redux';
 
-import { setCurrentScreen, SCREENS } from "../../../redux/userEntry"
+import { setCurrentScreen, SCREENS } from "../../../redux/userEntry";
+
+import signedUpImage from "../../../assets/illustrations/signed-up.png";
 
 
 let buttonStyling= {
@@ -49,12 +51,12 @@ export default function SignedupDialog() {
           >
             <img
               style={{ width: "50%" }}
-              src="https://i.ibb.co/pfmcbD3/undraw-Happy-announcement-re-tsm0.png"
+              src={signedUpImage}
               alt="undraw-Happy-announcement-re-tsm0"
               border="0"
             />
           </a>
-          <DialogTitle id="alert-dialog-title" sx={{ fontSize: "2rem" }}>
+          <DialogTitle id="alert-dialog-title" sx={{ fontSize: "2rem", color:"#efc16a" }}>
             Welcome to ToNoter
           </DialogTitle>
           <DialogContent>

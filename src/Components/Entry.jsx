@@ -12,6 +12,8 @@ import entryImg from "../assets/illustrations/entry.svg"
 
 import { setCurrentScreen, SCREENS } from "../redux/userEntry"
 import SignedupDialog from './InnerComponents/Entry/SignedupDialog';
+import { useState } from 'react';
+import EntryDialog from './InnerComponents/Misc/EntryDialog';
 
 let buttonStyling= {
     borderRadius:"26px",
@@ -26,12 +28,18 @@ let buttonStyling= {
 function Entry() {
 
   const { currentScreen } = useSelector(state => state.userEntry);
+  const [entryDialogOpen, setEntryDialogOpen] = useState(true);
   const dispatch = useDispatch();
 
   if (currentScreen === SCREENS.LOGIN){
     return (
+      <>
+      <EntryDialog open={entryDialogOpen} handleClose={()=>setEntryDialogOpen(false)} />
+      
       <div id="entry">
-  
+        
+    
+
           <div className="entry-left">
   
             <LoginSection />
@@ -54,7 +62,6 @@ function Entry() {
               <Button 
                 variant="contained"
                 size="large"
-                color="primary"
                 sx={buttonStyling}
                 onClick={()=>{dispatch(setCurrentScreen(SCREENS.SIGNUP))}}
                 >
@@ -64,6 +71,7 @@ function Entry() {
             </div>
           </div>
       </div>
+      </>
     )
   } else if (currentScreen ===  SCREENS.SIGNUP || currentScreen ===  SCREENS.SIGNEDUP){
     return (
@@ -93,7 +101,6 @@ function Entry() {
   
               <Button 
                 variant="contained"
-                color="primary"
                 size="large"
                 sx={buttonStyling}
                 onClick={()=>{dispatch(setCurrentScreen(SCREENS.LOGIN))}}
@@ -106,6 +113,7 @@ function Entry() {
       </div>
     )
   }
+
 
  
 }
