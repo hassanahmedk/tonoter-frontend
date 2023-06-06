@@ -48,7 +48,7 @@ function Display (props){
         :
         (
         <div id="display-screen" class={displayClass} style={display.displayScreen}>
-            <DisplayHeader />
+            <DisplayHeader date={noteToDisplay.dateModified} />
             <CSSTransition in={inProp} timeout={300} classNames={{
                                     enterActive: 'animate__animated animate__zoomIn',
                                     exitActive: 'animate__animated animate__zoomOut'

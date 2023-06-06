@@ -51,7 +51,7 @@ export default function Login() {
     //   return {...prevValues, [name]:value}
     // })
 
-    setValues({...values, [name]:value})
+    setValues({...values, [name]:value.toLowerCase()})
   }
 
 

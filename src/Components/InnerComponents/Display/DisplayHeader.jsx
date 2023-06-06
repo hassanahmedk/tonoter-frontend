@@ -6,7 +6,7 @@ import CloseIcon from '@mui/icons-material/Close';
 
 import {unpopulateDisplaySection} from "../../../redux/display";
 
-function DisplayHeader() {
+function DisplayHeader(props) {
     const dispatch = useDispatch();
 
     const {themeStyles:{display:{displayHeader}}} = useSelector(state => state.theme)
@@ -30,7 +30,7 @@ function DisplayHeader() {
             </div>
         </div>
         <div className="display-header-bottom" style={displayHeader.displayHeaderBottom}>
-            <p>Last Modified: 5 September 2022</p>
+            <p>Last Modified: {props.date}</p>
         </div>
     </div>
   )
